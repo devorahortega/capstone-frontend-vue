@@ -1,17 +1,20 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <h3>Please login or sign up</h3>
+    <h3>Please Login or Signup</h3>
   </div>
 </template>
 
+<style></style>
+
 <script>
 export default {
-  name: "Home",
   data: function () {
     return {
       message: "Welcome to Promptly",
     };
   },
+  created: function () {},
+  methods: {},
 };
 </script>
