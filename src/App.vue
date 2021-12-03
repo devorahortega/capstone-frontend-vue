@@ -7,7 +7,7 @@
       |
       <router-link to="/prompts">Prompts</router-link>
       |
-      <router-link to="/prompts">Create</router-link>
+      <router-link to="/prompts/new">Create</router-link>
     </div>
     <router-view />
   </div>

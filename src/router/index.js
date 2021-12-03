@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import PromptsIndex from "../views/PromptsIndex.vue";
+import PromptsNew from "../views/PromptsNew.vue";
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,11 @@ const routes = [
     path: "/prompts",
     name: "propmts-index",
     component: PromptsIndex,
+  },
+  {
+    path: "/prompts/new",
+    name: "propmts-create",
+    component: PromptsNew,
   },
 ];
 
