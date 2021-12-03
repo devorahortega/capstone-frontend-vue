@@ -5,7 +5,9 @@
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/promptsindex">Prompts</router-link>
+      <router-link to="/prompts">Prompts</router-link>
+      |
+      <router-link to="/prompts">Create</router-link>
     </div>
     <router-view />
   </div>
