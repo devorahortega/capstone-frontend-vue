@@ -1,43 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/prompts">Prompts</router-link>
-      |
-      <router-link to="/prompts/new">Create</router-link>
-      |
-      <router-link to="/sessions">Signup</router-link>
-      |
-      <router-link to="/login">Login</router-link>
-      |
-      <router-link to="/logout">Logout</router-link>
-    </div>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Promptly</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <header id="header" class="fixed-top d-flex align-items-cente">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+        <h1 class="logo me-auto me-lg-0"><a href="/home">Promptly</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto active" href="/home">Home</a></li>
+            <li><a class="nav-link scrollto" href="/about">About</a></li>
+            <li><a class="nav-link scrollto" href="/prompts">Prompts</a></li>
+            <li><a class="nav-link scrollto" href="/specials">Create</a></li>
+            <li class="dropdown">
+              <a href="#">
+                <span>Account</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+        <a href="/prompts" class="book-a-table-btn scrollto d-none d-lg-flex">Prompts</a>
+      </div>
+    </header>
     <router-view />
+    <footer id="footer" class="midnight-blue"></footer>
   </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
