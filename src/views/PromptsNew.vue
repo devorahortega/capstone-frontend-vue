@@ -28,7 +28,7 @@ export default {
   methods: {
     createPrompt: function () {
       axios
-        .get("/prompts", this.newPromptParams)
+        .post("/prompts", this.newPromptParams)
         .then(() => {
           this.$router.push("/prompts");
         })
