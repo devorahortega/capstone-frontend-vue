@@ -10,6 +10,8 @@
       <router-link to="/prompts/new">Create</router-link>
       |
       <router-link to="/sessions">Signup</router-link>
+      |
+      <router-link to="/login">Login</router-link>
     </div>
     <router-view />
   </div>
