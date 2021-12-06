@@ -8,6 +8,8 @@
       <router-link to="/prompts">Prompts</router-link>
       |
       <router-link to="/prompts/new">Create</router-link>
+      |
+      <router-link to="/sessions">Signup</router-link>
     </div>
     <router-view />
   </div>

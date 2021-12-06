@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import PromptsIndex from "../views/PromptsIndex.vue";
 import PromptsNew from "../views/PromptsNew.vue";
+import Signup from "../views/Signup.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: "/prompts/new",
     name: "propmts-create",
     component: PromptsNew,
+  },
+  {
+    path: "/sessions",
+    name: "signup",
+    component: Signup,
   },
 ];
 
