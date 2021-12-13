@@ -8,7 +8,9 @@
           </div>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-          <h1>_</h1>
+          <br />
+          <br />
+          <br />
           <h3>Promptly is a website that...</h3>
           <p class="fst-italic">...gives writers access to a database full of writing promts.</p>
           <ul>
