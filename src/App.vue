@@ -14,7 +14,6 @@
             <li><a class="nav-link scrollto active" href="/">Home</a></li>
             <li><a class="nav-link scrollto" href="/about">About</a></li>
             <li><a class="nav-link scrollto" href="/prompts">Prompts</a></li>
-            <li><a class="nav-link scrollto" href="/create">Create</a></li>
             <li class="dropdown">
               <a href="#">
                 <span>Account</span>
@@ -26,7 +25,6 @@
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
-            <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

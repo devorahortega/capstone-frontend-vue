@@ -6,7 +6,6 @@ import PromptsNew from "../views/PromptsNew.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
-import Contact from "../views/Contact.vue";
 
 Vue.use(VueRouter);
 
@@ -35,7 +34,7 @@ const routes = [
     component: PromptsNew,
   },
   {
-    path: "/sessions",
+    path: "/signup",
     name: "signup",
     component: Signup,
   },
@@ -48,11 +47,6 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout,
-  },
-  {
-    path: "/contact",
-    name: "contact",
-    component: Contact,
   },
 ];
 
