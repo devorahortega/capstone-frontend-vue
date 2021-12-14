@@ -15,7 +15,7 @@
         <div class="row mt-5">
           <div class="col-lg-4">
             <div class="info">
-              <img src="assets/img/specials-4.png" alt="" class="img-fluid" />
+              <img src="assets/img/create.png" alt="" class="img-fluid" />
             </div>
           </div>
 
