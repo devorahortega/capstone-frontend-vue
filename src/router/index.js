@@ -30,7 +30,7 @@ const routes = [
     component: PromptsIndex,
   },
   {
-    path: "/prompts/new",
+    path: "/create",
     name: "propmts-create",
     component: PromptsNew,
   },
