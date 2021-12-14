@@ -6,12 +6,18 @@
           <br />
           <br />
           <br />
-          <h2>Specials</h2>
-          <p>Check Our Specials</p>
+          <h2>Prompts</h2>
+          <p>List of Prompts</p>
           <br />
-          <label>Search:</label>
-          <br />
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by title.." />
+          <div>
+            <form class="example" action="/prompts">
+              <input type="text" placeholder="Search.." name="search" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <datalist id="titles">
+              <option v-for="prompt in prompts" :key="prompt.id">{{ prompt.title }}</option>
+            </datalist>
+          </div>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
