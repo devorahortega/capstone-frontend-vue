@@ -25,6 +25,7 @@
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
+            <li><a class="nav-link scrollto" href="/favorites">Favorites</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

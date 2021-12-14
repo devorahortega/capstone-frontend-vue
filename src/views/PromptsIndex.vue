@@ -3,8 +3,15 @@
     <section id="specials" class="specials">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
+          <br />
+          <br />
+          <br />
           <h2>Specials</h2>
           <p>Check Our Specials</p>
+          <br />
+          <label>Search:</label>
+          <br />
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by title.." />
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -127,14 +134,6 @@
     </section>
     <section id="specials" class="specials">
       <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <br />
-          <br />
-          <br />
-          <h2>Prompts</h2>
-          <p>List of Prompts</p>
-        </div>
-
         <div class="col-lg-9 mt-4 mt-lg-0">
           <div class="tab-pane" v-for="prompt in prompts" v-bind:key="prompt.id">
             <br />

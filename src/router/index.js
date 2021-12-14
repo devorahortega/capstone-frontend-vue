@@ -6,6 +6,7 @@ import PromptsNew from "../views/PromptsNew.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import Favorites from "../views/FavoritesIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -47,6 +48,11 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout,
+  },
+  {
+    path: "/favorites",
+    name: "favorites",
+    component: Favorites,
   },
 ];
 
