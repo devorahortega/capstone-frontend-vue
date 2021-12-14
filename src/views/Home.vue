@@ -20,7 +20,7 @@
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
+            <a href="https:/INSERT RANDOM LINK" class="glightbox play-btn"></a>
           </div>
         </div>
       </div>
