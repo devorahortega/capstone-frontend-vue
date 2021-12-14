@@ -76,7 +76,7 @@
                     </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-2.png" alt="" class="ing-fluid" />
+                    <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -95,7 +95,7 @@
                     </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-3.png" alt="" class="img-fluid" />
+                    <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@
                     </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-4.png" alt="" class="img-fluid" />
+                    <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@
                     </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/specials-5.png" alt="" class="img-fluid" />
+                    <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
               </div>
