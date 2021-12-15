@@ -8,6 +8,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Favorites from "../views/FavoritesIndex.vue";
 import Test from "../views/test.vue";
+import Update from "../views/promptUpdate.vue";
 
 Vue.use(VueRouter);
 
@@ -59,6 +60,11 @@ const routes = [
     path: "/test",
     name: "test",
     component: Test,
+  },
+  {
+    path: "/update",
+    name: "update",
+    component: Update,
   },
 ];
 

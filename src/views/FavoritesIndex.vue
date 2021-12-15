@@ -8,34 +8,36 @@
         <h2>Favorites</h2>
         <p>Your Favorites</p>
       </div>
-
       <div>
-        <form class="example" action="/prompts">
+        <form class="example" action="/favorites">
           <input type="text" placeholder="Search.." name="search" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <datalist id="titles">
-          <option v-for="favorite in favorites" :key="favorite.id">{{ prompt.title }}</option>
+          <option v-for="favorite in favorites" :key="favorite.id">{{ favorite.prompt }}</option>
         </datalist>
+        <br />
+        <br />
       </div>
     </div>
 
-    <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="prompt in prompts" v-bind:key="prompt.id">
+    <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="favorite in favorites" v-bind:key="favorite.id">
       <div class="col-lg-3">
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" id="prompt.id">-</a>
+            <a class="nav-link" data-bs-toggle="tab" id="favorite.id">-</a>
           </li>
         </ul>
       </div>
+
       <div class="col-lg-9 mt-4 mt-lg-0">
         <div class="tab-content">
           <div class="tab-pane active show">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>{{ favorite.title }}</h3>
+                <h3>{{ favorite.user_id }}</h3>
                 <p>
-                  {{ favorite.content }}
+                  {{ favorite.prompt_id }}
                 </p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -57,17 +59,18 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      prompts: [],
+      favorites: [],
+      prompt: prompt.id,
     };
   },
   created: function () {
-    this.indexPrompts();
+    this.indexFavorites();
   },
   methods: {
-    indexPrompts: function () {
-      axios.get("/prompts").then((response) => {
-        console.log("prompts index", response);
-        this.prompts = response.data;
+    indexFavorites: function () {
+      axios.get("/favorites").then((response) => {
+        console.log("favorites index", response);
+        this.favorites = response.data;
       });
     },
   },
