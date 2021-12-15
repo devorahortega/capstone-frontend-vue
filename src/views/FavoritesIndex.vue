@@ -25,7 +25,13 @@
       <div class="col-lg-3">
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" id="favorite.id">-</a>
+            <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
+              <button router-link to="/update">Update</button>
+              <p></p>
+            </a>
+            <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
+              <button to="/update" tag="button">Delete</button>
+            </a>
           </li>
         </ul>
       </div>
@@ -35,9 +41,9 @@
           <div class="tab-pane active show">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>{{ favorite.user_id }}</h3>
+                <h3>{{ favorite.prompt.title }}</h3>
                 <p>
-                  {{ favorite.prompt_id }}
+                  {{ favorite.prompt.content }}
                 </p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
