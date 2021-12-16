@@ -30,7 +30,7 @@
               <p></p>
             </a>
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <button to="/update" tag="button">Delete</button>
+              <button v-on:click="destroyFavorite(favorite)">Delete</button>
             </a>
           </li>
         </ul>
@@ -67,6 +67,7 @@ export default {
     return {
       favorites: [],
       prompt: prompt.id,
+      currentFavorite: {},
     };
   },
   created: function () {
@@ -75,8 +76,15 @@ export default {
   methods: {
     indexFavorites: function () {
       axios.get("/favorites").then((response) => {
-        console.log("favorites index", response);
+        console.log("favorites index", response.data);
         this.favorites = response.data;
+      });
+    },
+    destroyFavorite: function (favorite) {
+      axios.delete(`/favorites/${favorite.id}`).then((response) => {
+        console.log("The favorite has been deleted.", response.data);
+        var index = this.favorites.indexOf(favorite);
+        this.favorites.splice(index, 1);
       });
     },
   },

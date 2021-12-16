@@ -8,7 +8,6 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Favorites from "../views/FavoritesIndex.vue";
 import Test from "../views/test.vue";
-import Update from "../views/promptUpdate.vue";
 import Vue2Filters from "vue2-filters";
 
 Vue.use(Vue2Filters);
@@ -63,11 +62,6 @@ const routes = [
     path: "/test",
     name: "test",
     component: Test,
-  },
-  {
-    path: "/update",
-    name: "update",
-    component: Update,
   },
 ];
 

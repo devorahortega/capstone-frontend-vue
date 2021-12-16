@@ -22,12 +22,25 @@
             <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
                 <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" id="prompt.id"></a>
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-                    <button router-link to="/update">Update</button>
-                    <p></p>
+                    <dialog id="prompt-info">
+                      <form method="dialog">
+                        <h1>Prompt Info</h1>
+                        <p>
+                          Title:
+                          <input type="text" v-model="currentPrompt.title" />
+                        </p>
+                        <p>
+                          Content:
+                          <input type="text" v-model="currentPrompt.content" />
+                        </p>
+                      </form>
+                    </dialog>
+                    <button v-on:click="updatePrompt(prompt)">Update</button>
                   </a>
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-                    <button to="/update" tag="button">Update</button>
+                    <button v-on:click="favoritePrompt(prompt)">Favorite</button>
                   </a>
                 </li>
               </ul>
@@ -37,10 +50,10 @@
                 <div class="tab-pane active show">
                   <div class="row">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>{{ prompt.title }}</h3>
-                      <p>
+                      <p>{{ prompt.title }}</p>
+                      <h3>
                         {{ prompt.content }}
-                      </p>
+                      </h3>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
                       <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
@@ -67,6 +80,7 @@ export default {
   data: function () {
     return {
       prompts: [],
+      currentPrompt: {},
     };
   },
   created: function () {
@@ -79,10 +93,16 @@ export default {
         this.prompts = response.data;
       });
     },
+    updatePrompt: function (prompt) {
+      var editPromptParams = prompt;
+      axios.patch("/prompts/" + prompt.id, editPromptParams).then((response) => {
+        console.log("The prompt has been updated.", response.data);
+      });
+    },
     favoritePrompt: function (prompt) {
       this.currentPrompt = prompt;
       axios
-        .post("/favorites", this.prompt)
+        .post(`/favorites`)
         .then(() => {
           this.$router.push("/favorites");
         })
