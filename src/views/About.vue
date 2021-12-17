@@ -1,5 +1,9 @@
 <template>
   <div class="about">
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="container" data-aos="fade-up">
       <div class="row">
         <br />
