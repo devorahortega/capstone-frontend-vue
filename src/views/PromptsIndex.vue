@@ -11,7 +11,7 @@
           <br />
           <div>
             <form class="example" action="/prompts">
-              <input type="text" v-model="titleFilter" list="titles" />
+              <input type="text" v-model="titleFilter" placeholder="Search..." list="titles" />
               <button type="submit"><i class="fa fa-search"></i></button>
               <datalist id="titles">
                 <option v-for="prompt in prompts" :key="prompt.id">{{ prompt.title }}</option>

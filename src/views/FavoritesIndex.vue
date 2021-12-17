@@ -10,7 +10,7 @@
       </div>
       <div>
         <form class="example" action="/favorites">
-          <input type="text" placeholder="Search.." name="search" />
+          <input type="text" placeholder="Search..." name="search" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <datalist id="titles">
