@@ -7,7 +7,7 @@
             <br />
             <br />
             <br />
-            <h2>Signup</h2>
+            <h2>Account</h2>
             <p>Create an Account</p>
           </div>
         </div>
