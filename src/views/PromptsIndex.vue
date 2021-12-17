@@ -9,7 +9,7 @@
           <h2>Prompts</h2>
           <p>List of Prompts</p>
           <br />
-          <!-- <div>
+          <div>
             <form class="example" action="/prompts">
               <input type="text" v-model="titleFilter" list="titles" />
               <button type="submit"><i class="fa fa-search"></i></button>
@@ -19,7 +19,7 @@
             </form>
             <br />
             <br />
-          </div> -->
+          </div>
           <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="prompt in prompts" v-bind:key="prompt.id">
             <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
@@ -28,9 +28,8 @@
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
                     <button v-on:click="showForm">Edit</button>
                     <dialog id="prompt-info">
-                      <button type="button" id="close" data-bs-dismiss="modal" class="btn-close"></button>
-                      <h1>Prompt Info</h1>
                       <form method="dialog">
+                        <h1>Prompt Info</h1>
                         <p>
                           <input type="text" placeholder="Title" v-model="currentPromptParams.title" />
                         </p>
@@ -41,6 +40,7 @@
                         <br />
                         <button v-on:click="updatePrompt(prompt)">Update</button>
                         <p></p>
+                        <button type="button" class="close" data-dismiss="modal">Close</button>
                         <p />
                       </form>
                     </dialog>

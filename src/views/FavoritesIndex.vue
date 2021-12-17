@@ -26,7 +26,25 @@
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <button router-link to="/update">Update</button>
+              <button v-on:click="showForm">Edit</button>
+              <!-- <button type="button" id="close" data-bs-dismiss="modal" class="btn-close"></button> -->
+              <h1>Prompt Info</h1>
+              <dialog id="prompt-info">
+                <form method="dialog">
+                  <p>
+                    <input type="text" placeholder="Title" v-model="currentPromptParams.title" />
+                  </p>
+                  <br />
+                  <p>
+                    <input type="text" placeholder="Content" v-model="currentPromptParams.content" />
+                  </p>
+                  <br />
+                  <button v-on:click="updatePrompt(prompt)">Update</button>
+                  <button>close</button>
+                  <p></p>
+                  <p />
+                </form>
+              </dialog>
               <p></p>
             </a>
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
