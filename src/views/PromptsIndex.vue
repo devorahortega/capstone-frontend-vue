@@ -26,20 +26,24 @@
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id"></a>
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
+                    <button v-on:click="showForm">Edit</button>
                     <dialog id="prompt-info">
+                      <button type="button" id="close" data-bs-dismiss="modal" class="btn-close"></button>
+                      <h1>Prompt Info</h1>
                       <form method="dialog">
-                        <h1>Prompt Info</h1>
                         <p>
-                          Title:
-                          <input type="text" v-model="currentPrompt.title" />
+                          <input type="text" placeholder="Title" v-model="currentPromptParams.title" />
                         </p>
+                        <br />
                         <p>
-                          Content:
-                          <input type="text" v-model="currentPrompt.content" />
+                          <input type="text" placeholder="Content" v-model="currentPromptParams.content" />
                         </p>
+                        <br />
+                        <button v-on:click="updatePrompt(prompt)">Update</button>
+                        <p></p>
+                        <p />
                       </form>
                     </dialog>
-                    <button v-on:click="updatePrompt(prompt)">Update</button>
                   </a>
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
                     <button v-on:click="favoritePrompt(prompt)">Favorite</button>
@@ -82,7 +86,7 @@ export default {
   data: function () {
     return {
       prompts: [],
-      currentPrompt: {},
+      currentPromptParams: {},
     };
   },
   created: function () {
@@ -95,11 +99,17 @@ export default {
         this.prompts = response.data;
       });
     },
-    updatePrompt: function (prompt) {
-      var editPromptParams = prompt;
-      axios.patch("/prompts/" + prompt.id, editPromptParams).then((response) => {
-        console.log("The prompt has been updated.", response.data);
-      });
+    showForm: function () {
+      document.querySelector("#prompt-info").showModal();
+    },
+    updatePrompt: function () {
+      axios
+        .patch(`/prompts/${this.$route.params.id}`, this.currentPromptParams)
+        .then((response) => {
+          console.log("The prompt has been updated.", response.data);
+          this.$router.push(`/prompts/${response.data.id}`);
+        })
+        .catch((error) => console.log(error.response));
     },
     favoritePrompt: function (prompt) {
       this.currentPrompt = prompt;
