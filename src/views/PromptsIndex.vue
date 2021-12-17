@@ -17,6 +17,8 @@
                 <option v-for="prompt in prompts" :key="prompt.id">{{ prompt.title }}</option>
               </datalist>
             </form>
+            <br />
+            <br />
           </div> -->
           <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="prompt in prompts" v-bind:key="prompt.id">
             <div class="col-lg-3">
