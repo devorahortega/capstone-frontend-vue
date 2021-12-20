@@ -917,6 +917,17 @@ section {
   font-weight: 600;
   font-size: 15px;
 }
+
+.specials .button {
+  background: #cda45e;
+  width: 20%;
+  padding: 10px;
+  background: #cda45e;
+  color: rgb(7, 7, 7);
+  font-size: 17px;
+  border: 1px solid grey;
+}
+
 .specials .nav-link:hover {
   color: #cda45e;
 }
@@ -944,6 +955,7 @@ section {
 .specials .details p:last-child {
   margin-bottom: 0;
 }
+
 @media (max-width: 992px) {
   .specials .nav-link {
     border: 0;
