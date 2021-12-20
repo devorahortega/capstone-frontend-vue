@@ -26,8 +26,8 @@
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <button v-on:click="showForm(prompt)">Edit</button>
-              <dialog id="prompt-info">
+              <!--  <button v-on:click="showForm(prompt)">Edit</button>
+              <dialog id="favorite-info">
                 <form method="dialog">
                   <h1>Prompt Info</h1>
                   <p>
@@ -38,11 +38,11 @@
                     <input type="text" placeholder="Content" v-model="currentPrompt.content" />
                   </p>
                   <br />
-                  <button v-on:click="updatePrompt(currentPrompt)">Update</button>
+                  <button v-on:click="updatePrompt(currentfavorite.prompt)">Update</button>
                   <p></p>
                   <p />
                 </form>
-              </dialog>
+              </dialog>-->
             </a>
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
               <button v-on:click="destroyFavorite(favorite)">Delete</button>
@@ -81,8 +81,9 @@ export default {
   data: function () {
     return {
       favorites: [],
-      prompt: prompt.id,
-      currentFavorite: {},
+      editPromptParams: "",
+      errors: [],
+      currentPrompt: "",
     };
   },
   created: function () {
@@ -96,8 +97,8 @@ export default {
       });
     },
     showForm: function (prompt) {
-      this.currentPrompt = prompt;
-      console.log(this.currentPrompt, this.currentPrompt.id);
+      this.currentFavorite = prompt;
+      console.log(this.currentFavorite, this.currentFavorite.id);
       document.querySelector("#prompt-info").showModal();
     },
     updatePrompt: function (prompt) {
