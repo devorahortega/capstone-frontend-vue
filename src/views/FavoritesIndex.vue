@@ -1,89 +1,88 @@
 <template>
-  <section id="specials" class="specials">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <br />
-        <br />
-        <br />
-        <h2>Favorites</h2>
-        <p>Your Favorites</p>
-      </div>
-      <div>
-        <form class="example" action="/favorites">
-          <input type="text" placeholder="Search..." name="search" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <datalist id="titles">
-          <option v-for="favorite in favorites" :key="favorite.id">{{ favorite.prompt }}</option>
-        </datalist>
-        <br />
-        <br />
-      </div>
-    </div>
-
-    <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="favorite in favorites" v-bind:key="favorite.id">
-      <div class="col-lg-3">
-        <ul class="nav nav-tabs flex-column">
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <!--  <button v-on:click="showForm(prompt)">Edit</button>
-              <dialog id="favorite-info">
-                <form method="dialog">
-                  <h1>Prompt Info</h1>
-                  <p>
-                    <input type="text" placeholder="Title" v-model="currentPrompt.title" />
-                  </p>
-                  <br />
-                  <p>
-                    <input type="text" placeholder="Content" v-model="currentPrompt.content" />
-                  </p>
-                  <br />
-                  <button v-on:click="updatePrompt(currentfavorite.prompt)">Update</button>
-                  <p></p>
-                  <p />
-                </form>
-              </dialog>-->
-            </a>
-            <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <button v-on:click="destroyFavorite(favorite)">Delete</button>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-lg-9 mt-4 mt-lg-0">
-        <div class="tab-content">
-          <div class="tab-pane active show">
-            <div class="row">
-              <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>{{ favorite.prompt.title }}</h3>
-                <p>
-                  {{ favorite.prompt.content }}
-                </p>
-              </div>
-              <div class="col-lg-4 text-center order-1 order-lg-2">
-                <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
-                <br />
-                <br />
+  <div class="prompts-index">
+    <section id="specials" class="specials">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <br />
+          <br />
+          <br />
+          <h2>Favorites</h2>
+          <p>List of Favorites</p>
+          <br />
+          <div>
+            <!-- <form class="example" action="/prompts">
+              <input type="text" v-model="titleFilter" placeholder="Search..." list="titles" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+              <datalist id="titles">
+                <option v-for="favorite in favorites" :key="favorite.id">{{ favorite.prompt.title }}</option>
+              </datalist>
+            </form> -->
+            <br />
+            <br />
+          </div>
+          <div
+            class="row"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            v-for="favorite in favorites"
+            v-bind:key="favorite.id"
+          >
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" id="favorite.id"></a>
+                  <a class="nav-link" data-bs-toggle="tab" id="favorite.id"></a>
+                  <button v-on:click="destroyFavorite(favorite)">Delete</button>
+                  <div
+                    class="row"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    v-for="favorite in favorites"
+                    v-bind:key="favorite.id"
+                  ></div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <div class="tab-content">
+                <div class="tab-pane active show">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <p>{{ favorite.prompt.title }}</p>
+                      <h3>
+                        {{ favorite.prompt.content }}
+                      </h3>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/specials-1.png" alt="" class="img-fluid" />
+                      <br />
+                      <br />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
+// import Vue2Filters from "vue2-filters";
 
 export default {
+  // mixins: [Vue2Filters.mixin],
   data: function () {
     return {
-      favorites: [],
+      prompts: [],
+      currentPrompt: "",
       editPromptParams: "",
       errors: [],
-      currentPrompt: "",
+      favorites: [],
+      // user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -97,8 +96,8 @@ export default {
       });
     },
     showForm: function (prompt) {
-      this.currentFavorite = prompt;
-      console.log(this.currentFavorite, this.currentFavorite.id);
+      this.currentPrompt = prompt;
+      console.log(this.currentPrompt, this.currentPrompt.id);
       document.querySelector("#prompt-info").showModal();
     },
     updatePrompt: function (prompt) {
