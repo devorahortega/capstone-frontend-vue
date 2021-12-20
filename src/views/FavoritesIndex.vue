@@ -26,26 +26,23 @@
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-              <button v-on:click="showForm">Edit</button>
-              <!-- <button type="button" id="close" data-bs-dismiss="modal" class="btn-close"></button> -->
-              <h1>Prompt Info</h1>
+              <button v-on:click="showForm(prompt)">Edit</button>
               <dialog id="prompt-info">
                 <form method="dialog">
+                  <h1>Prompt Info</h1>
                   <p>
-                    <input type="text" placeholder="Title" v-model="currentPromptParams.title" />
+                    <input type="text" placeholder="Title" v-model="currentPrompt.title" />
                   </p>
                   <br />
                   <p>
-                    <input type="text" placeholder="Content" v-model="currentPromptParams.content" />
+                    <input type="text" placeholder="Content" v-model="currentPrompt.content" />
                   </p>
                   <br />
-                  <button v-on:click="updatePrompt(prompt)">Update</button>
-                  <button>close</button>
+                  <button v-on:click="updatePrompt(currentPrompt)">Update</button>
                   <p></p>
                   <p />
                 </form>
               </dialog>
-              <p></p>
             </a>
             <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
               <button v-on:click="destroyFavorite(favorite)">Delete</button>
@@ -97,6 +94,20 @@ export default {
         console.log("favorites index", response.data);
         this.favorites = response.data;
       });
+    },
+    showForm: function (prompt) {
+      this.currentPrompt = prompt;
+      console.log(this.currentPrompt, this.currentPrompt.id);
+      document.querySelector("#prompt-info").showModal();
+    },
+    updatePrompt: function (prompt) {
+      var editPromptParams = prompt;
+      axios
+        .patch("/prompts/" + prompt.id, editPromptParams)
+        .then((response) => {
+          console.log("The prompt has been updated.", response.data, prompt.id), this.$router.go();
+        })
+        .catch((error) => console.log(error.response));
     },
     destroyFavorite: function (favorite) {
       axios.delete(`/favorites/${favorite.id}`).then((response) => {
