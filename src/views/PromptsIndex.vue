@@ -9,7 +9,7 @@
           <h2>Prompts</h2>
           <p>List of Prompts</p>
           <br />
-          <div>
+          <!-- <div>
             <form class="example" action="/prompts">
               <input type="text" v-model="titleFilter" placeholder="Search..." list="titles" />
               <button type="submit"><i class="fa fa-search"></i></button>
@@ -19,28 +19,27 @@
             </form>
             <br />
             <br />
-          </div>
+          </div> -->
           <div class="row" data-aos="fade-up" data-aos-delay="100" v-for="prompt in prompts" v-bind:key="prompt.id">
             <div class="col-lg-3">
               <ul class="nav nav-tabs flex-column">
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id"></a>
                   <a class="nav-link" data-bs-toggle="tab" id="prompt.id">
-                    <button v-on:click="showForm">Edit</button>
+                    <button v-on:click="showForm(prompt)">Edit</button>
                     <dialog id="prompt-info">
                       <form method="dialog">
                         <h1>Prompt Info</h1>
                         <p>
-                          <input type="text" placeholder="Title" v-model="currentPromptParams.title" />
+                          <input type="text" placeholder="Title" v-model="currentPrompt.title" />
                         </p>
                         <br />
                         <p>
-                          <input type="text" placeholder="Content" v-model="currentPromptParams.content" />
+                          <input type="text" placeholder="Content" v-model="currentPrompt.content" />
                         </p>
                         <br />
-                        <button v-on:click="updatePrompt(prompt)">Update</button>
+                        <button v-on:click="updatePrompt(currentPrompt)">Update</button>
                         <p></p>
-                        <button type="button" class="close" data-dismiss="modal">Close</button>
                         <p />
                       </form>
                     </dialog>
@@ -86,7 +85,10 @@ export default {
   data: function () {
     return {
       prompts: [],
-      currentPromptParams: {},
+      currentPrompt: "",
+      editPromptParams: "",
+      errors: [],
+      // user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -99,15 +101,17 @@ export default {
         this.prompts = response.data;
       });
     },
-    showForm: function () {
+    showForm: function (prompt) {
+      this.currentPrompt = prompt;
+      console.log(this.currentPrompt, this.currentPrompt.id);
       document.querySelector("#prompt-info").showModal();
     },
-    updatePrompt: function () {
+    updatePrompt: function (prompt) {
+      var editPromptParams = prompt;
       axios
-        .patch(`/prompts/${this.$route.params.id}`, this.currentPromptParams)
+        .patch("/prompts/" + prompt.id, editPromptParams)
         .then((response) => {
-          console.log("The prompt has been updated.", response.data);
-          this.$router.push(`/prompts/${response.data.id}`);
+          console.log("The prompt has been updated.", response.data, prompt.id), this.$router.go();
         })
         .catch((error) => console.log(error.response));
     },
