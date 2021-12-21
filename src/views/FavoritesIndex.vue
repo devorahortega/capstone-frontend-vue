@@ -10,13 +10,6 @@
           <p>List of Favorites</p>
           <br />
           <div>
-            <!-- <form class="example" action="/prompts">
-              <input type="text" v-model="titleFilter" placeholder="Search..." list="titles" />
-              <button type="submit"><i class="fa fa-search"></i></button>
-              <datalist id="titles">
-                <option v-for="favorite in favorites" :key="favorite.id">{{ favorite.prompt.title }}</option>
-              </datalist>
-            </form> -->
             <br />
             <br />
           </div>
