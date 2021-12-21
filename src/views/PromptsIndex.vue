@@ -98,6 +98,8 @@ export default {
       errors: [],
       titleFilter: "",
       sortAttribute: "title",
+      newFavoriteParams: {},
+      current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -125,10 +127,11 @@ export default {
         .catch((error) => console.log(error.response));
     },
     favoritePrompt: function (prompt) {
-      this.currentPrompt = prompt;
+      var params = { prompt_id: prompt.id, user_id: this.current_user_id };
       axios
-        .post(`/favorites`)
-        .then(() => {
+        .post("/favorites", params)
+        .then((response) => {
+          console.log("New Favorite", response);
           this.$router.push("/favorites");
         })
         .catch((error) => {
