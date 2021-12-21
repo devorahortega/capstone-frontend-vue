@@ -16,7 +16,7 @@
             <li><a class="nav-link scrollto" href="/prompts">Prompts</a></li>
             <li><a class="nav-link scrollto" href="/create">Create</a></li>
             <li class="dropdown">
-              <a href="/">
+              <a href="">
                 <span>Account</span>
                 <i class="bi bi-chevron-down"></i>
               </a>
