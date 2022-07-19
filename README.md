@@ -1,24 +1,31 @@
-# capstone-frontend-vue
+# README
 
-## Project setup
-```
-npm install
-```
+PROMPTLY FRONTEND
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is the frontend of my Promptly website which displays the imformation stored in my backend in different windows and lists. It also allows a user to interract with the information in the datanase.
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Technologies used in the creation of this database:
+
+Javascript version
+
+System dependencies
+
+Configuration
+
+Database creation
+
+Database initialization
+
+How to run the test suite
+
+Services (job queues, cache servers, search engines, etc.)
+
+Deployment instructions
+
+
+
+Any questions? Reach out to me at:
+
+LinkedIn at https://www.linkedin.com/in/devorahortega/
