@@ -2,29 +2,35 @@
 
 PROMPTLY FRONTEND
 
-This is the frontend of my Promptly website which displays the imformation stored in my backend in different windows and lists. It also allows a user to interract with the information in the datanase.
+This is the front-end of my Promptly website which displays the information stored in my backend in different windows and lists. It also allows a user to interact with the information in the database.
 
-
+.
 
 Technologies used in the creation of this database:
 
-Javascript version
+- Code was written in Visual Studio Code and executed in the terminal
 
-System dependencies
+- Javascript Version - v17.0.1
 
-Configuration
+- Axios Version - ^0.24.0
 
-Database creation
+- Vue Version - ^2.6.11
 
-Database initialization
+- VueJS Modal Version - ^2.0.1
 
-How to run the test suite
+- Vue Router Version - ^3.2.0
 
-Services (job queues, cache servers, search engines, etc.)
+- Vue2Filers Version - ^0.13.0
 
-Deployment instructions
+- CoreJS Version - ^3.6.5
 
+- Bootstrap theme - Restaurantly - https://bootstrapmade.com/restaurantly-restaurant-template/
 
+- Features: Home, About, Prompts List, Create Prompt, Sign Up, Log In, Log Out, Favorites List
+
+- Forms: Contact us form
+
+.
 
 Any questions? Reach out to me at:
 
